@@ -12,11 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.tjpu.pojo.SYSUser;
+import com.tjpu.pojo.Sysuser;
 import com.tjpu.service.SYSUserService;
 import com.tjpu.util.BaseController;
 import com.tjpu.util.JSONUtils;
-import com.tjpu.util.MD5Util;
 
 @Controller
 @Scope(value = "prototype")
@@ -27,12 +26,12 @@ public class SYSUserController extends BaseController {
 	@RequestMapping(value = "/getSYSUserById", method = RequestMethod.GET)
 	public void getSYSUserById(@RequestParam(value = "id", required = true) int id, HttpServletRequest request,
 			HttpServletResponse response) throws IOException {
-		SYSUser sysUser = sysUserService.getSYSUserById(id);
+		Sysuser sysUser = sysUserService.getSYSUserById(id);
 		writeStringToResponse(response, JSONUtils.objectToJsonString(sysUser));
 	}
 
 	@RequestMapping(value = "/insertSYSUser", method = RequestMethod.POST)
-	public void insertSYSUser(SYSUser sysUser, HttpServletRequest request, HttpServletResponse response)
+	public void insertSYSUser(Sysuser sysUser, HttpServletRequest request, HttpServletResponse response)
 			throws IOException {
 		int result = sysUserService.insertSYSUser(sysUser);
 		writeStringToResponse(response, result + "");

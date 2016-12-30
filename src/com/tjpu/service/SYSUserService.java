@@ -1,9 +1,9 @@
 package com.tjpu.service;
 
-import com.tjpu.pojo.SYSUser;
+import com.tjpu.pojo.Sysuser;
 
 public interface SYSUserService {
-	public SYSUser getSYSUserById(int id);
+	public Sysuser getSYSUserById(int id);
 
-	public int insertSYSUser(SYSUser sysUser);
+	public int insertSYSUser(Sysuser sysUser);
 }
